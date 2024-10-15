@@ -7,14 +7,31 @@
   font-size: 16px;
 }
 
+:root{
+  --white: #fff;
+  --lightyellow: #FFF6A1;
+  --darkOrange: rgba(247, 105, 2, 0.82);
+  --black: #353535;
+  --orange: #FFA800;
+}
+
 body {
   margin: 0;
-  font-family: "Cheeseburga", 'Helvetica Neue',sans-serif;
+  font-family: "Cheeseburga", "Montserrat", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 1.125rem;
   font-weight: 400;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+}
+
+.heading-white{
+  color: var(--white);
+  font-family: "Cheeseburga", "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 7.3rem;
+  font-weight: 400;
+  line-height: 110.997%;
+  margin: 0;
 }
 
 /* Landing Page Background */
@@ -26,6 +43,7 @@ body {
   background-position: center;
   background-size: cover;
   box-sizing: border-box;
+  position: fixed;
 }
 
 .landing-bg-heading {
@@ -63,4 +81,114 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Main Landing Page */
+
+
+.landing-page-main{
+        position: absolute;
+        top: 90vh;
+        background-color: var(--white);
+        left: 50%; 
+        transform: translateX(-50%);        
+        width: 85%;
+        height: 90vh;
+        overflow-y: hidden;  
+        border-radius: 1.5em 1.5em 0 0;
+        overflow-x: hidden;
+        padding-inline: 3rem;
+}
+
+.landing-page-main::-webkit-scrollbar{
+  display: none;
+}
+
+.landing-page-main.scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+.landing-page-container{
+  width: 100%;
+}
+
+.landing-page-container .top-rectangle{
+  width: 7rem;
+  height: 0.8rem;
+  background: var(--lightyellow);
+  margin: 1.2em auto;
+  border-radius: 1.5em;
+}
+
+.landing-page-container .header{
+  display: flex;
+  align-items:flex-start;
+  justify-content: space-between;
+}
+
+.landing-page-container .bg-triangle{
+  width: 86.74263rem;
+  height: 59.05938rem;
+  /* transform: rotate(39.412deg); */
+  transform: rotate(8deg);
+  /* background-color: #0F1B29; */
+  background: radial-gradient(44.22% 45.51% at 50.14% 67.33%, #FFF280 0%, #FFC700 100%);;
+  position: absolute;
+  top: -240px;
+  left: -25px;
+  z-index: -1;
+}
+
+.landing-page-container .header img{
+  width: 55%;
+  margin-left: -3rem;
+}
+
+.landing-page-content h1{
+  color: var(--darkOrange);
+  font-family: "Montserrat", "Kumbh Sans", Arial, Helvetica, sans-serif;
+  font-size: 3.35rem;
+  text-align: right;
+  font-weight: 900;
+  line-height: 106.73%; 
+ margin-bottom: 0.4em;
+}
+
+.landing-page-content h1>span{
+  margin-top: 0.2em;
+  display: inline-block;
+}
+
+.landing-page-content p{
+  color: var(--black);
+  text-align: right;
+  font-family: "Kumbh Sans", "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 104.73%;
+  margin: 0;
+}
+
+/* main landing page- section 2- all photos videos slider */
+.all-photos-slider{
+  margin-top: -20rem;
+}
+
+.all-photos-slider-tabs{
+  display: flex;
+  justify-content: center;
+  column-gap: 2em;
+}
+
+.all-photos-slider-tabs .slider-tab{
+  margin: 0;
+  color: var(--orange);
+  font-family: "Montserrat", "Kumbh Sans", Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 104.73%; /* 2.09463rem */
 }
