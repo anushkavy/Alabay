@@ -82,7 +82,7 @@ export default function LandingPage() {
             alt="Happy Alabay Dog Reflection"
             className="header-image-reflection"
             style={{
-              top: headerImageHeight,
+              top: headerImageHeight || "300px",
             }}
           />
           <div className="landing-page-content">
@@ -120,7 +120,7 @@ export default function LandingPage() {
             alt="Many dogs reflection"
             className="project-vision-animals-reflection"
             style={{
-              top: projectVisionImageHeight,
+              top: projectVisionImageHeight || "300px",
             }}
           />
           {console.log("project vision image height", projectVisionImageHeight)}
