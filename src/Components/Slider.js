@@ -4,8 +4,17 @@ import ArrowRight from "../Svgs/ArrowRight.svg";
 export default function Slider({ data }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const visibleGalleryRef = useRef(null);
-  const slidesPerClick = 3;
   const totalSlides = data.slides.length;
+
+  let slidesPerClick = 3;
+
+  if (window.innerWidth > 950) {
+    slidesPerClick = 3;
+  } else if (window.innerWidth > 550) {
+    slidesPerClick = 2;
+  } else {
+    slidesPerClick = 1;
+  }
 
   function handleNextClick() {
     setCurrentSlide((prevState) => {

@@ -6,6 +6,11 @@ import ProjectVisionBg from "../Svgs/ProjectVisionBg.svg";
 export default function LandingPage() {
   const [isScrollable, setIsScrollable] = useState(false);
   const mainDivRef = useRef(null);
+  const headerImageRef = useRef(null);
+  const projectVisionImgRef = useRef(null);
+  const [headerImageHeight, setHeaderImageHeight] = useState(null);
+  const [projectVisionImageHeight, setProjectVisionImageHeight] =
+    useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +32,35 @@ export default function LandingPage() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleHeaderImageHeight = () => {
+      setHeaderImageHeight(
+        headerImageRef?.current?.getBoundingClientRect().height
+      );
+    };
+
+    const handleProjectVisionImageHeight = () => {
+      setProjectVisionImageHeight(
+        projectVisionImgRef?.current?.getBoundingClientRect().height
+      );
+    };
+
+    handleHeaderImageHeight();
+    handleProjectVisionImageHeight();
+
+    window.addEventListener("resize", () => {
+      handleHeaderImageHeight();
+      handleProjectVisionImageHeight();
+    });
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        handleHeaderImageHeight();
+        handleProjectVisionImageHeight();
+      });
+    };
+  }, []);
+
   return (
     <div
       className={`landing-page-main ${isScrollable ? "scrollable" : ""}`}
@@ -37,7 +71,20 @@ export default function LandingPage() {
         <header className="header">
           <div className="bg-triangle"></div>
 
-          <img src="Images/landing-page-header.png" alt="Happy Alabay Dog" />
+          <img
+            src="Images/landing-page-header.png"
+            alt="Happy Alabay Dog"
+            className="header-image"
+            ref={headerImageRef}
+          />
+          <img
+            src="Images/landing-page-header-reflection.png"
+            alt="Happy Alabay Dog Reflection"
+            className="header-image-reflection"
+            style={{
+              top: headerImageHeight,
+            }}
+          />
           <div className="landing-page-content">
             <h1>
               History Of<span className="heading-white"> ALABAY</span>
@@ -66,12 +113,17 @@ export default function LandingPage() {
             src="Images/landing-page-project-vision.png"
             alt="Many dogs"
             className="project-vision-animals"
+            ref={projectVisionImgRef}
           />
           <img
             src="Images/landing-page-project-vision-reflection.png"
             alt="Many dogs reflection"
             className="project-vision-animals-reflection"
+            style={{
+              top: projectVisionImageHeight,
+            }}
           />
+          {console.log("project vision image height", projectVisionImageHeight)}
           <img
             src={ProjectVisionBg}
             alt="background"

@@ -3,6 +3,8 @@
   src: url("../public/Fonts/cheeseburga.ttf");
 }
 
+
+
 #root{
   font-size: 16px;
 }
@@ -103,7 +105,7 @@ body {
         background-color: var(--white);
         left: 50%; 
         transform: translateX(-50%);        
-        width: 85%;
+        width: 85vw;
         height: 90vh;
         overflow-y: hidden;  
         border-radius: 1.5em 1.5em 0 0;
@@ -123,6 +125,7 @@ body {
 
 .landing-page-container{
   width: 100%;
+  
 }
 
 .landing-page-container .top-rectangle{
@@ -131,19 +134,19 @@ body {
   background: var(--lightyellow);
   margin: 1.2em auto;
   border-radius: 1.5em;
+  
 }
 
 .landing-page-container .header{
   display: flex;
   align-items:flex-start;
   justify-content: space-between;
-  height: 43.05938rem;
-
+  margin-bottom: 5em;
 }
 
 .landing-page-container .bg-triangle{
   width: 86.74263rem;
-  height: 59.05938rem;
+  height: 53.05938rem;
   transform: rotate(8deg);
   background: radial-gradient(44.22% 45.51% at 50.14% 67.33%, #FFF280 0%, #FFC700 100%);;
   position: absolute;
@@ -152,9 +155,18 @@ body {
   z-index: -1;
 }
 
-.landing-page-container .header img{
+.header .header-image{
   width: 55%;
-  margin-left: -3rem;
+  margin-left: -1rem;
+  position: relative;
+}
+
+.header-image-reflection{
+  position: absolute;
+  width: 55%;
+  margin-top: -20px;
+  left: 0px;
+  z-index: -1;
 }
 
 .landing-page-content h1{
@@ -181,6 +193,80 @@ body {
   font-weight: 700;
   line-height: 104.73%;
   margin: 0;
+}
+
+@media (max-width:800px) {
+
+  
+  .heading-white, .heading-orange{
+    font-size: 7rem;
+  }
+
+  .landing-page-main{        
+        width: 80vw;
+}
+
+.landing-page-container .header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.landing-page-container .bg-triangle{
+  height: 66.05938rem;
+}
+
+.header .header-image{
+  margin-left: 0;
+}
+
+.header-image-reflection{
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -5px;
+}
+
+.landing-page-content h1{
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 1em;
+}
+
+.landing-page-content p{
+  text-wrap: pretty;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 104.73%;
+  margin: 0;
+}
+  
+}
+
+@media (max-width:550px) {
+
+   .heading-white, .heading-orange{
+    font-size: 6rem;
+  }
+
+
+  .landing-page-main{        
+        width: 70vw;
+}
+
+
+.landing-page-container .bg-triangle{
+  height: 60.05938rem;
+}
+
+
+.landing-page-content p{
+  font-size: 1.3rem;
+  
+}
+  
 }
 
 /* main landing page- section 2- all photos videos slider */
@@ -227,10 +313,12 @@ body {
 .project-vision-animals-reflection{
   width: 100%;
   position: absolute;
-  top: 640px;
-  left: 10px;
+  /* top: 470px; */
+  /* left: 10px; */
   transform: rotate(-2deg);
-  z-index: -1;
+  z-index: 0;
+  margin-top: 50px;
+
 }
 
 .project-vision-bg{
@@ -251,12 +339,56 @@ body {
   text-align: center;
   margin-top: 2em;
 }
+@media (max-width:950px) {
+  .project-vision-animals-reflection{
+  margin-top: 230px;
+  
+}
 
+.project-vision-bg{
+  top: 240px;
+  left: -325px;
+  height: 70rem;
+  width: 100rem;
+}
+
+@media (max-width:800px){
+  .project-vision-bg{
+  top: 240px;
+  left: -425px;
+  height: 64rem;
+  width: 100rem;
+}
+}
+
+@media (max-width: 550px) {
+  .project-vision-main{
+  margin-top: 10em;
+}
+
+.project-vision-bg{
+  position: absolute;
+  top: 240px;
+  left: -500px;
+  z-index: -2;
+  height: 49rem;
+  width: 100rem;
+}
+
+.project-vision-main p{
+  font-size: 1.6rem;
+
+}
+}
+
+
+
+}
 /* Roadmap Section */
 
 .roadmap-main{
   margin-top: 7em;
-
+  margin-bottom: 7em;
 }
 
 .roadmap-container{
@@ -282,6 +414,19 @@ font-weight: 700;
   color: var(--orange);
 }
 
+@media (max-width:800px) {
+
+.roadmap-content{
+font-size: 1.7rem;
+}
+}
+
+@media (max-width:550px) {
+
+.roadmap-content{
+font-size: 1.3rem;
+}
+}
 
 /* COMPONENTS */
 
@@ -332,3 +477,14 @@ font-weight: 700;
   filter: drop-shadow(4px 6px 6px var(--black));
 }
 
+@media (max-width:800px){
+  .slide-image{
+  width: 40%;
+} 
+}
+
+@media (max-width:500px){
+  .slide-image{
+  width: 80%;
+} 
+}
