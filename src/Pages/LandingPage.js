@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react";
-import mainDog from "../Images/landing-page-header.png";
+import Slider from "../Components/Slider";
+import { data } from "../Data/SliderFirst";
+import ProjectVisionBg from "../Svgs/ProjectVisionBg.svg";
 
 export default function LandingPage() {
   const [isScrollable, setIsScrollable] = useState(false);
@@ -35,7 +37,7 @@ export default function LandingPage() {
         <header className="header">
           <div className="bg-triangle"></div>
 
-          <img src={mainDog} alt="Happy Alabay Dog" />
+          <img src="Images/landing-page-header.png" alt="Happy Alabay Dog" />
           <div className="landing-page-content">
             <h1>
               History Of<span className="heading-white"> ALABAY</span>
@@ -52,8 +54,50 @@ export default function LandingPage() {
         <div className="all-photos-slider">
           <div className="all-photos-slider-tabs">
             <h4 className="slider-tab">ALL</h4>
-            <h4 className="slider-tab">PHOTOS</h4>
+            <h4 className="slider-tab selected">PHOTOS</h4>
             <h4 className="slider-tab">VIDEOS</h4>
+          </div>
+          <Slider data={data} />
+        </div>
+
+        <div className="project-vision-main">
+          <h1 className="heading-orange">PROJECT VISION</h1>
+          <img
+            src="Images/landing-page-project-vision.png"
+            alt="Many dogs"
+            className="project-vision-animals"
+          />
+          <img
+            src="Images/landing-page-project-vision-reflection.png"
+            alt="Many dogs reflection"
+            className="project-vision-animals-reflection"
+          />
+          <img
+            src={ProjectVisionBg}
+            alt="background"
+            className="project-vision-bg"
+          />
+          <p>
+            Our mission is to honor the heritage of the Alabay by creating a
+            vibrant, loyal, and powerful community. Just as the Alabay protects
+            its flock, we aim to build a pack that stands strong together.
+          </p>
+        </div>
+
+        <div className="roadmap-main">
+          <h1 className="heading-white">ROADMAP</h1>
+          <div className="roadmap-container">
+            <div className="roadmap-content">
+              <p>
+                Our journey is just beginning. Explore our roadmap to see the
+                exciting milestones and future plans we have in store.
+              </p>
+              <span>Join us as we grow and achieve new heights.</span>
+            </div>
+            <img
+              src="Images/landing-page-roadmap.png"
+              alt="Alabay on an exploration adventure with a map in hand"
+            />
           </div>
         </div>
       </div>

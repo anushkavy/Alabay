@@ -11,7 +11,7 @@
   --white: #fff;
   --lightyellow: #FFF6A1;
   --darkOrange: rgba(247, 105, 2, 0.82);
-  --black: #353535;
+  --black: #353535; 
   --orange: #FFA800;
 }
 
@@ -34,12 +34,23 @@ body {
   margin: 0;
 }
 
+.heading-orange{
+  color: var(--orange);
+  font-family: "Cheeseburga", "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 7.3rem;
+  font-weight: 400;
+  line-height: 110.997%;
+  margin: 0;
+}
+
+/* PAGES AND SECTIONS  */
+
 /* Landing Page Background */
 
 .landing-bg-main{
   width: 100vw;
   height: 100vh;
-  background-image:url("./Images/landing-page-bg.png");
+  background-image:url("../public/Images/landing-page-bg.png");
   background-position: center;
   background-size: cover;
   box-sizing: border-box;
@@ -126,14 +137,14 @@ body {
   display: flex;
   align-items:flex-start;
   justify-content: space-between;
+  height: 43.05938rem;
+
 }
 
 .landing-page-container .bg-triangle{
   width: 86.74263rem;
   height: 59.05938rem;
-  /* transform: rotate(39.412deg); */
   transform: rotate(8deg);
-  /* background-color: #0F1B29; */
   background: radial-gradient(44.22% 45.51% at 50.14% 67.33%, #FFF280 0%, #FFC700 100%);;
   position: absolute;
   top: -240px;
@@ -173,22 +184,151 @@ body {
 }
 
 /* main landing page- section 2- all photos videos slider */
-.all-photos-slider{
-  margin-top: -20rem;
-}
 
 .all-photos-slider-tabs{
   display: flex;
   justify-content: center;
   column-gap: 2em;
+  margin-bottom: 2em;
 }
 
 .all-photos-slider-tabs .slider-tab{
   margin: 0;
-  color: var(--orange);
+  color: var(--black);
   font-family: "Montserrat", "Kumbh Sans", Arial, Helvetica, sans-serif;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 900;
   line-height: 104.73%; /* 2.09463rem */
+  cursor: pointer;
 }
+
+.all-photos-slider-tabs .selected{
+  color: var(--orange);
+}
+
+/* Project Vision Section */
+
+.project-vision-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 15em;
+}
+
+.project-vision-animals{
+  width: 100%;
+  position: relative;
+  margin-top:2.5em;
+}
+
+.project-vision-animals-reflection{
+  width: 100%;
+  position: absolute;
+  top: 640px;
+  left: 10px;
+  transform: rotate(-2deg);
+  z-index: -1;
+}
+
+.project-vision-bg{
+  position: absolute;
+  top: 240px;
+  left: -250px;
+  z-index: -2;
+  height: 82rem;
+  width: 100rem;
+}
+
+.project-vision-main p{
+  color: var(--black);
+  font-family: "Kumbh Sans", "Monsterrat", Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 104.73%; /* 3.14188rem */
+  text-align: center;
+  margin-top: 2em;
+}
+
+/* Roadmap Section */
+
+.roadmap-main{
+  margin-top: 7em;
+
+}
+
+.roadmap-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.roadmap-container img{
+  width: 55%;
+}
+
+.roadmap-content{
+  color: #353535;
+font-family: "Kumbh Sans", "Monsterrat", Arial, Helvetica, sans-serif;
+font-size: 2rem;
+font-style: normal;
+font-weight: 700;
+}
+
+.roadmap-content span{
+  display: inline-block;
+  color: var(--orange);
+}
+
+
+/* COMPONENTS */
+
+/* Slider */
+
+.slider-main{
+  width: 85vw;
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2em;
+}
+
+.slide-images-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 3em;
+  width: 100%;
+  margin-right: auto;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  transition: scroll-behavior 0.5s;
+}
+
+.slide-image{
+  width: 30%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  background-color: var(--lightyellow);
+  padding: 1em 1.5em;
+  border-radius: 0.5em;
+  border: 0.2em solid var(--lightyellow);
+
+} 
+
+.slide-image:hover{
+  border: 0.2em solid var(--black);
+}
+.slider-next-btn, .slider-next-btn:focus{
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: var(--black);
+  padding: 2em 1em;
+  border-radius: 1.3em;
+  filter: drop-shadow(4px 6px 6px var(--black));
+}
+
